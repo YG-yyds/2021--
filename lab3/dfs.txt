@@ -1,0 +1,28 @@
+
+
+
+            Max 
+             ans
+           stack
+            data = new int[21][21];
+            
+           对于每个相邻的ab
+                    data[a][b]++;
+                    data[b][a]++;
+            dfs(2); 第二深度开始搜就可以，至于为什么，可以自己想想
+print max
+        
+
+    static void dfs( int depth) { 递归来省时间，每个状态和Max比较
+      
+     
+        dfs( depth + 1);
+        该点设置大写（用stack存）
+
+       30步内计算出当前答案【遍历stack】你想，这个点大写，改变的答案量是不是这个点连的所有的点的和（是不是可以先计算出）减去两倍的大写的点的边权？
+
+        dfs( depth+ 1);
+       该点设置小写 stack pop
+
+    }
+建议每个testcase用（21）*2^20步  【在stack中，21可以优化到一半】
